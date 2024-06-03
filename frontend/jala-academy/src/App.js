@@ -23,8 +23,6 @@ import Update from './pages/update/Update';
 import Settings from './pages/Settings';
 
 
-
-
 function App() {
 
 
@@ -32,10 +30,9 @@ function App() {
     <BrowserRouter >
     <Routes>
       <Route>
-      <Route path="/" element={<Account />}/>
-      <Route path="/admin" element={<AdminLogin />} />
-
-      <Route path="/forgotpass" element={<PasswordForgot />} />
+        <Route path="/" element={<Account />}/>
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/forgotpass" element={<PasswordForgot />} />
         <Route path="/home" element={<Home />}/>
         <Route path="/create" element={<Create />}/>
         <Route path="/update/:_id" element={<Update />}/>
@@ -51,14 +48,9 @@ function App() {
         <Route path='/search' element={<Search/>} />
         <Route path="/links" element={<Links />}></Route>
         <Route path="/images" element={<Images />}></Route>
-
         <Route path='/d' element={<MultiValue />} />
-        <Route path='/setting' element={<Settings />} />
-        
-
+        <Route path='/setting' element={<Settings />} />      
         <Route path='/data' element={<DataTable />} />
-
-
       </Route>
     </Routes>
     </BrowserRouter>

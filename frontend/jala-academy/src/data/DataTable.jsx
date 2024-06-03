@@ -8,36 +8,28 @@ import {
 } from "material-react-table";
 import { AppContext } from "../layout/contex/AppContex";
 
-
-const DataTable = ({props}) => {
-
-
+const DataTable = ({ props }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const [fnames , setFNames] = ([]);
-  
+  const [fnames, setFNames] = [];
 
   useEffect(() => {
     getAllData();
     getEmpNames();
   }, []);
 
-  const firstName =[];
-  const getEmpNames = async ()=>{
+  const firstName = [];
+  const getEmpNames = async () => {
     try {
       const setEmpName = await axios.get(
         "http://localhost:8086/api/v1/employee/getAll"
       );
 
       const result = setEmpName.data;
-      result.map((fname)=>{
-          firstName.push(fname.first_name); 
-          
-
+      result.map((fname) => {
+        firstName.push(fname.first_name);
       });
-   
-
 
       setLoading(false);
     } catch (err) {
@@ -92,7 +84,7 @@ const DataTable = ({props}) => {
         size: 50,
       },
       {
-        accessorKey:"country",
+        accessorKey: "country",
         header: "Country",
         size: 50,
       },
@@ -105,13 +97,12 @@ const DataTable = ({props}) => {
         accessorKey: "address",
         header: "Address",
         size: 50,
-      },     
+      },
       {
         accessorKey: "skills",
         header: "Skills",
         size: 50,
       },
-      
     ],
     []
   );
@@ -135,15 +126,17 @@ const DataTable = ({props}) => {
 
   return (
     <>
-    <Link to={"/search"}>
-        <button type="button" className="btn btn-primary my-2 p-2">Serach Employee</button>
-
-        </Link>
-        <Link to={"/home"}>
-        <button type="button" className="ml-4 btn btn-primary my-2 p-2">Home</button>
-
-        </Link>
-      <div className="dataDetails text-black" style={{display: "flex"}}>
+      <Link to={"/search"}>
+        <button type="button" className="btn btn-primary my-2 p-2">
+          Serach Employee
+        </button>
+      </Link>
+      <Link to={"/home"}>
+        <button type="button" className="ml-4 btn btn-primary my-2 p-2">
+          Home
+        </button>
+      </Link>
+      <div className="dataDetails text-black" style={{ display: "flex" }}>
         {loading ? (
           <div>
             <h3>Loading...</h3>
@@ -152,7 +145,7 @@ const DataTable = ({props}) => {
           <div
             className="dataContainer"
             style={{
-                flex: 2,
+              flex: 2,
               width: "100vh",
               height: "50%",
               overflow: "auto",
@@ -167,4 +160,4 @@ const DataTable = ({props}) => {
   );
 };
 
-export default DataTable
+export default DataTable;

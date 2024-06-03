@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../pages/home/home.css";
 import Sidebar from "../layout/Sidebar";
 import Header from "../layout/Header";
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 import { FaHome } from "react-icons/fa";
 
 import { AppContext } from "../layout/contex/AppContex";
@@ -22,25 +22,35 @@ const AutoComplete = () => {
         <div className="flex">
           <Sidebar />
           <div className="w-full bg-gray-200 text-white h-screen px-3 py-3">
-          <h2 className="text-base font-bold leading-7 text-gray-900 text-xl">Autocomplete</h2>
-         
-          <div className='text-black flex justify-end mb-2'>
-           <FaHome className='mt-1 mr-1'/><h1 className='text-base font-bold leading-7 text-gray-530 '> Home / More / Autocomplete </h1>
-        </div>
-<hr  className="text-black"/>
-          <div className="h-[50%] m-4 border-solid border-1 border-gray-600 text-white p-4 bg-gray-900">
+            <h2 className="text-base font-bold leading-7 text-gray-900 text-xl">
+              Autocomplete
+            </h2>
 
-          <Tabs
-          
+            <div className="text-black flex justify-end mb-2">
+              <FaHome className="mt-1 mr-1" />
+              <h1 className="text-base font-bold leading-7 text-gray-530 ">
+                {" "}
+                Home / More / Autocomplete{" "}
+              </h1>
+            </div>
+            <hr className="text-black" />
+            <div className="h-[50%] m-4 border-solid border-1 border-gray-600 text-white p-4 bg-gray-900">
+              <Tabs
                 defaultActiveKey="Single Value"
                 id="tab-example"
                 className="mb-3"
               >
-                <Tab eventKey="Single Value" title="Single Value" >
-                 
-                <input className="form-control w-[50%] my-10 bg-gray-200" type="text" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." multiple/>
-                <datalist id="datalistOptions" className="bg-gray-200" >
-                    <option value="ActionScript" className="bg-white"/>
+                <Tab eventKey="Single Value" title="Single Value">
+                  <input
+                    className="form-control w-[50%] my-10 bg-gray-200"
+                    type="text"
+                    list="datalistOptions"
+                    id="exampleDataList"
+                    placeholder="Type to search..."
+                    multiple
+                  />
+                  <datalist id="datalistOptions" className="bg-gray-200">
+                    <option value="ActionScript" className="bg-white" />
                     <option value="AppleScript" />
                     <option value="Asp" />
                     <option value="Basics" />
@@ -56,31 +66,31 @@ const AutoComplete = () => {
                     <option value="Perl" />
                     <option value="PHP" />
                     <option value="python" />
-
-                </datalist>
-                 
+                  </datalist>
                 </Tab>
-       
-                <Tab eventKey="Multiple Value" title="Multiple Value" >
-                 <div className="text-black">
-                  <MultiValue/>
-                 </div>
 
-                  
-                 </Tab>
-                
-            </Tabs>
-          </div>
-          <div  className="relative h-52 text-center text-black">
-                        <div  className="absolute inset-x-0 bottom-0  ...">
-                            Copyright © 2024 <a className="text-blue-600" href="http://jalatechnologies.com"> JALA Technologies</a>. All rights reserved.
-                          </div>
-                          </div>
+                <Tab eventKey="Multiple Value" title="Multiple Value">
+                  <div className="text-black">
+                    <MultiValue />
+                  </div>
+                </Tab>
+              </Tabs>
             </div>
+            <div className="relative h-52 text-center text-black">
+              <div className="absolute inset-x-0 bottom-0  ...">
+                Copyright © 2024{" "}
+                <a className="text-blue-600" href="http://jalatechnologies.com">
+                  {" "}
+                  JALA Technologies
+                </a>
+                . All rights reserved.
+              </div>
+            </div>
+          </div>
         </div>
       </AppContext.Provider>
     </div>
   );
 };
 
-export default AutoComplete
+export default AutoComplete;

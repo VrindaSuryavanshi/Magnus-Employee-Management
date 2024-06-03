@@ -1,28 +1,31 @@
-
-ul{
+ul {
     list-style: none;
 }
-.menu>li , .menu > a{
+
+.menu>li,
+.menu>a {
 
     display: inline-block;
 }
-.menu li{
+
+.menu li {
     position: relative;
 }
 
-.menu li{
+.menu li {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
     display: block;
-    padding: 10px 1.5rem;    
-   transition:  background-color .22s ease , color .22s ease ;
+    padding: 10px 1.5rem;
+    transition: background-color .22s ease, color .22s ease;
 }
 
-.menu li:hover{
+.menu li:hover {
     background-color: rgb(10, 68, 116);
     color: #fff;
 
 }
+
 .submenu {
     position: absolute;
     background-color: rgb(114, 176, 226);
@@ -30,10 +33,12 @@ ul{
     left: 0;
     display: none;
 }
-.submenu li{
+
+.submenu li {
     border: 0.5px solid rgb(156, 150, 150);
 }
-.submenu2{
+
+.submenu2 {
     position: absolute;
     background-color: rgb(114, 176, 226);
     width: 180px;
@@ -42,9 +47,10 @@ ul{
     display: none;
 }
 
-.menu li:hover > .submenu{
+.menu li:hover>.submenu {
     display: block;
 }
-.submenu li:hover > .submenu2{
+
+.submenu li:hover>.submenu2 {
     display: block;
 }

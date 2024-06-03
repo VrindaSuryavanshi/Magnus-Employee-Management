@@ -7,8 +7,8 @@ import { BsMenuButtonWideFill } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { IoMdArrowDropdownCircle } from "react-icons/io";
 import { AppContext } from "./contex/AppContex";
-import '../../src/input.css'
-import '../pages/home/home.css'
+import "../../src/input.css";
+import "../pages/home/home.css";
 const Sidebar = () => {
   const menu = [
     {
@@ -25,7 +25,7 @@ const Sidebar = () => {
         {
           title: "Create",
           icon: IoCreateSharp,
-          link: "/create",          
+          link: "/create",
           subitems: [],
         },
         {
@@ -130,26 +130,25 @@ const Sidebar = () => {
   const { appData, setAppData } = useContext(AppContext);
 
   return (
-
-      
     <div
       className={`${
-        appData.sidebarVisible ? "w-[230px]" : "w-[0px]" 
+        appData.sidebarVisible ? "w-[230px]" : "w-[0px]"
       }  md:h-ful transition-all duration-200 linear duration-900 flex-shrink-0 bg-gray-800 text-white border-r border-r-[#888]`}
     >
-      <div className="m-4 flex flex-row"> 
-      <div>
-        <img src="https://t3.ftcdn.net/jpg/05/53/79/60/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg" alt="" className="w-20 h-20 rounded-full"/>
-
-      </div>
-        <div className=" my-4 mx-2 flex flex-col">
-        <h6>Guest User</h6>
-        <small>User</small>
+      <div className="m-4 flex flex-row">
+        <div>
+          <img
+            src="https://t3.ftcdn.net/jpg/05/53/79/60/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg"
+            alt=""
+            className="w-20 h-20 rounded-full"
+          />
         </div>
-       
+        <div className=" my-4 mx-2 flex flex-col">
+          <h6>Guest User</h6>
+          <small>User</small>
+        </div>
       </div>
-      <ul      
-      className="mt-2 list-none">
+      <ul className="mt-2 list-none">
         {menu.map((x) => {
           if (x.subitems.length > 0) {
             // render submenu
@@ -223,8 +222,6 @@ const Sidebar = () => {
         })}
       </ul>
     </div>
-    
-
   );
 };
 
